@@ -1,0 +1,98 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  height: 100vh;
+  width: 100vw;
+}
+
+body {
+  background-color: #222222;
+  width: 100%;
+  height: 100%;
+}
+
+.card {
+  width: 350px;
+  height: 450px;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 5px;
+  overflow: hidden;
+  font-family: Arial, Helvetica, sans-serif;
+  letter-spacing: 0.02em;
+}
+
+.card-img {
+  background-image: url("images/background-image.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 450px;
+}
+
+.card::after {
+  content: "";
+  background-color: #cddc39;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.4s ease-out 0s;
+  -webkit-transition: all 0.4s ease-out 0s; /*chrome*/
+  -moz-transition: all 0.4s ease-out 0s; /*firefox*/
+  -o-transition: all 0.4s ease-out 0s; /*opera*/
+}
+
+.card:hover::after {
+  visibility: visible;
+  opacity: 0.9;
+}
+
+.card-caption {
+  position: absolute;
+  padding: 1.5em;
+  color: #88022f;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 10;
+  transform: translateY(0%);
+  -webkit-transform: translateY(0%); /*chrome*/
+  -moz-transform: translateY(0%); /*firefox*/
+  -o-transform: translateY(0%); /*opera*/
+  transition: all 0.4s ease-out 0s;
+  -webkit-transition: all 0.4s ease-out 0s; /*chrome*/
+  -moz-transition: all 0.4s ease-out 0s; /*firefox*/
+  -o-transition: all 0.4s ease-out 0s; /*opera*/
+}
+
+.card:hover .card-caption {
+  transform: translateY(-102%);
+  visibility: visible;
+  opacity: 1;
+}
+
+.card-caption h3 {
+  margin-bottom: 16px;
+}
+
+.card-caption p {
+  font-size: 14px;
+}
+
+.card-caption a {
+  text-decoration: none;
+  color: #88022f;
+  font-weight: 600;
+}
+
+.card-caption a:hover {
+  text-decoration: underline;
+}
